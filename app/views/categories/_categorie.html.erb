@@ -1,0 +1,11 @@
+<li>
+  <%= categorie.nom %> -
+  <%= link_to 'Show', categorie %> |
+  <%= link_to 'Edit', edit_categorie_path(categorie) %> |
+  <%= link_to 'Destroy', categorie, :confirm => 'Are you sure?', :method => :delete %>
+  <ul>
+    <% categorie.categories.each do |c| %>
+      <%= render :partial => "categorie", :locals => { :categorie => c } %>
+    <% end %>
+  </ul>
+</li>

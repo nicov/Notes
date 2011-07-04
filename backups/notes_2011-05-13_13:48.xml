@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notes>
+  <note>
+    <contenu># Dans le fichier .ssh/config remplir des hotes sur le mod&#232;le
+Host &lt;identifiant&gt;
+  Hostname &lt;nom d'hote ou ip&gt;
+  user &lt;nom d'utilisateur&gt;
+  # Rebond ssh
+  ProxyCommand ssh &lt;user&gt;@&lt;host&gt; nc %h %p 2&gt; /dev/null
+
+# Dans un terminal
+ssh &lt;identifiant&gt;</contenu>
+    <categorie>Linux/ssh</categorie>
+    <titre>Memoriser les sessions</titre>
+  </note>
+  <note>
+    <contenu># copier la cl&#233; publique dans le fichier .ssh/authorized_keys de la machine distante
+cat ~/.ssh/id_rsa.pub | ssh &lt;user&gt;@&lt;ip_machine&gt; "cat - &gt;&gt; ~/.ssh/authorized_keys"
+# Attention
+# le fichier authorized_keys doit avoir un chmod de 600 ! Pour une raison inconnue !!!
+
+# Methode automatis&#233;e
+ssh-copy-id [-i [identity_file]] [user@]machine </contenu>
+    <categorie>Linux/ssh</categorie>
+    <titre>Exporter la cl&#233; publique</titre>
+  </note>
+  <note>
+    <contenu># Commande
+nginx -s [ stop | quit | reopen | reload ]</contenu>
+    <categorie>Linux/Nginx</categorie>
+    <titre>Administrer</titre>
+  </note>
+  <note>
+    <contenu>***** Sur Mandriva/RadHat *****
+
+# Lister les services
+chkconfig
+
+# Ajouter un service au demarrage
+chkconfig service on
+
+# Supprimer un service au demarrage
+chkconfig service off
+
+# Sources
+http://www.delafond.org/traducmanfr/man/man8/chkconfig.8.html
+
+***** Sur Debian *****
+
+update-rc.d</contenu>
+    <categorie>Linux/Services</categorie>
+    <titre>Gestion au demarrage</titre>
+  </note>
+  <note>
+    <contenu># Lister les versions
+rvm list
+
+# Montrer la version utilis&#233;e
+rvm use
+
+# Changer de version
+rvm &lt;version&gt;
+
+# Ajouter une nouvelle version
+rvm install 1.8.7
+rvm install jruby</contenu>
+    <categorie>Ruby/RVM</categorie>
+    <titre>Versions de Ruby</titre>
+  </note>
+  <note>
+    <contenu># Lister les gemsets
+rvm gemset list
+
+# Montrer le gemset utilis&#233;
+rvm gemset name
+
+# Creer un gemset
+rvm gemset create &lt;gemset_name&gt;
+
+# Supprimer gemset
+rvm gemset delete &lt;gemset_name&gt;
+
+# Assigner &#224; un projet (dossier) une version de ruby et un gemset
+# Dans le dossier du projet
+echo "rvm ruby-1.8.7-p302@mrvs_ws_2" &gt; .rvmrc
+# En realite a chaque cd dans le dossier le contenu de .rvmrc sera execut&#233;
+
+# no such file to load -- readline (LoadError)
+rvm package install readline
+# si d&#233;j&#224; install&#233;
+rvm remove 1.8.7
+rvm install 1.8.7 -C --with-readline-dir=$HOME/.rvm/usr</contenu>
+    <categorie>Ruby/RVM</categorie>
+    <titre>Gestion des gemsets</titre>
+  </note>
+  <note>
+    <contenu>ssh-add</contenu>
+    <categorie>Linux/ssh</categorie>
+    <titre>Generer les cl&#233;s</titre>
+  </note>
+  <note>
+    <contenu># Ouvrir un fichier - utilisation de tab possible
+:e path/to/file
+
+# Ouvrir un fichier vie l'explorateur de fichier
+:Ex
+
+# Fermer un fichier en supprimant son buffer
+:bd </contenu>
+    <categorie>Linux/vim</categorie>
+    <titre>Gestion de fichiers</titre>
+  </note>
+  <note>
+    <contenu>http://nvie.com/posts/a-successful-git-branching-model/</contenu>
+    <categorie>Git/Branching_model</categorie>
+    <titre>Sources</titre>
+  </note>
+  <note>
+    <contenu>$ git checkout develop
+Switched to branch 'develop'
+$ git merge --no-ff myfeature
+Updating ea1b82a..05e9557
+(Summary of changes)
+$ git branch -d myfeature
+Deleted branch myfeature (was 05e9557).
+$ git push origin develop</contenu>
+    <categorie>Git/Branching_model</categorie>
+    <titre>Terminer une branche "feature"</titre>
+  </note>
+  <note>
+    <contenu>$ git checkout -b myfeature develop
+Switched to a new branch "myfeature"</contenu>
+    <categorie>Git/Branching_model</categorie>
+    <titre>Commencer une branche "feature"</titre>
+  </note>
+  <note>
+    <contenu>http://www.trustonme.net/didactels/148.html</contenu>
+    <categorie>Linux/Bash</categorie>
+    <titre>Sources</titre>
+  </note>
+  <note>
+    <contenu>-f teste l'existence d'un fichier
+-d teste l'existence d'un r&#233;pertoire
+-x teste si le fichier existe et est ex&#233;cutable
+-r teste si le fichier existe et est ouvert en lecture
+-w teste si le fichier existe et ouvert en &#233;criture
+-s teste si le fichier existe et a une taille sup&#233;rieur &#224; 0 octet </contenu>
+    <categorie>Linux/Bash</categorie>
+    <titre>Conditions</titre>
+  </note>
+  <note>
+    <contenu># Restorer la conf d'usine
+OS9xx# write erase
+OS9xx# reboot
+</contenu>
+    <categorie>MRV</categorie>
+    <titre>Gestion des configuration</titre>
+  </note>
+  <note>
+    <contenu>User.create(:email =&gt; "user@name.com", :password =&gt; 'password', :password_confirmation =&gt; 'password')</contenu>
+    <categorie>Ruby/Rails/Devise</categorie>
+    <titre>Ajouter un utilisateur depuis la console</titre>
+  </note>
+  <note>
+    <contenu># Intranoo
+http://intranoo.francetelecom.fr/intranoo-ie.html</contenu>
+    <categorie>Divers</categorie>
+    <titre>Adresses utiles</titre>
+  </note>
+  <note>
+    <contenu># Lancer le script d'installation dans gems/passenger/bin
+# suivre les instructions
+
+# Attention ligne qui pointe vers ruby, utiliser le wrapper
+passenger_ruby /home/fsdz0585/.rvm/wrappers/ruby-1.8.7-p302/ruby;</contenu>
+    <categorie>Ruby/Rails/Passenger</categorie>
+    <titre>Installation pour Nginx</titre>
+  </note>
+  <note>
+    <contenu># Dans nginx.conf dans le bloc server principal
+location /sub_uri {
+	passenger_enabled on;
+	passenger_base_uri /sub_uri;
+	rails_env development; # Par default production
+}
+
+# Dans le dossier racine du serveur (par default nginx/html)
+ln -s /chemin/vers/public sub_uri</contenu>
+    <categorie>Ruby/Rails/Passenger</categorie>
+    <titre>Configuration pour nginx</titre>
+  </note>
+  <note>
+    <contenu>http://www.tuxfiles.org/linuxhelp/vimcheat.html</contenu>
+    <categorie>Linux/vim</categorie>
+    <titre>Sources</titre>
+  </note>
+  <note>
+    <contenu>update table set colonne=value where condition</contenu>
+    <categorie>SQL</categorie>
+    <titre>Modifier des donn&#233;es</titre>
+  </note>
+  <note>
+    <contenu># Connexion
+/exec/products/mysql/v5.0.45/bin/mysql --defaults-file=/data/myq/myserver01/data/my.cnf -f -u root P04CCCF
+# ou
+/exec/products/mysql/v5.0.45/bin/mysql --protocol=TCP -u root P04CCCF
+
+# Accceder depuis l'exterieur
+# dans le fichier /data/myq/myserver01/data/my.cnf commenter
+bind-address=op04c5dev
+
+# Acceder derri&#232;re vmware
+# Editer sur l'hote /etc/vmware/vmnet8/nat/nat.conf
+[incomingtcp]
+3307 = 192.168.202.128:3306</contenu>
+    <categorie>CoreConf</categorie>
+    <titre>Base de donn&#233;es</titre>
+  </note>
+  <note>
+    <contenu>cc_beth_v2_movement # Mouvements BEth
+</contenu>
+    <categorie>CoreConf</categorie>
+    <titre>Tables utiles</titre>
+  </note>
+  <note>
+    <contenu># Creer un utilisateur
+create user username@'adress|%';
+
+# Octroyer tous les privileges
+grant all privileges on P04CCCF.* to 'root'@'%' identified by 'dvsi!%007';
+
+# Changer le mdp
+update mysql.user set password=password('dvsi!%007') where user='root' and host='%';</contenu>
+    <categorie>CoreConf</categorie>
+    <titre>Gestion des utilisateurs</titre>
+  </note>
+  <note>
+    <contenu># Lister les "name services"
+/opt/NetMgr/jacorb/bin/lsns.sh
+# Manuellement
+/opt/NetMgr/jacorb/bin/jaco ContextLister org.jacorb.naming.ContextLister "$@"</contenu>
+    <categorie>ASPEN</categorie>
+    <titre>OSSServer</titre>
+  </note>
+  <note>
+    <contenu>$(contenu)
+# R&#233;cup&#232;re dans une variable le r&#233;sultat de l'ex&#233;cution du contenu</contenu>
+    <categorie>Linux/Bash</categorie>
+    <titre>Divers</titre>
+  </note>
+</notes>

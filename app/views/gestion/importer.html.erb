@@ -1,0 +1,10 @@
+<h1>Importer Notes</h1>
+
+<%= form_tag({:action => 'upload'}, :multipart => true) %>
+
+<p>
+  <label>fichier source</label> :
+  <%= file_field 'file', 'data' %>
+</p>
+
+<%= submit_tag "Envoyer" %>

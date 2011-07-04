@@ -1,0 +1,11 @@
+<h1>Listing categories</h1>
+
+<ul>
+  <% @categories.each do |categorie| %>
+  <%= render :partial => "categorie", :locals => { :categorie => categorie } %>
+  <% end %>
+</ul>
+
+<br />
+
+<%= link_to 'New Categorie', new_categorie_path %>

@@ -1,0 +1,8 @@
+<li>
+  <%= link_to "#{categorie.nom} (#{categorie.notes.count})", categorie %>
+  <ul>
+    <% categorie.categories.order('nom ASC').each do |c| %>
+      <%= render :partial => "categories/navigation_menu", :locals => { :categorie => c } %>
+    <% end %>
+  </ul>
+</li>

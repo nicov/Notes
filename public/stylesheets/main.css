@@ -1,0 +1,62 @@
+/* 
+    Document   : main
+    Created on : 19 avr. 2011, 11:29:29
+    Author     : fsdz0585
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+body {
+  font-family: Verdana,Helvetica,Arial;
+  font-size: 14px;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 18px;
+  font-style: italic;
+  font-weight: normal;
+}
+
+#categories_navigation {
+    float: left;
+    width: 300px;
+}
+
+#main_page {
+    float: left;
+    left: 300px;
+    width: 600px;
+}
+
+hr {
+  background-color: #D8D8D8;
+  border-width: 0px;
+  height: 1px;
+}
+
+hr.section {
+  background-color: black;
+  height: 1px;
+  width: 40%;
+}
+
+.note {
+}
+
+.note h1 {
+  font-size: 16px;
+}
+
+#preview {
+  padding-bottom: 20px;
+}

@@ -1,0 +1,15 @@
+<h1>Dernières Notes</h1>
+
+<% @notes.each do |note| %>
+  <div class="note">
+    <h2><%= note.titre %></h2>
+    <h3>Categorie: <%= note.categorie.nom %></h3>
+    <% if user_signed_in? %>
+      <p>
+        <%= link_to 'Modifier', edit_note_path(note) %> |
+        <%= link_to 'Supprimer', note, :confirm => 'Are you sure?', :method => :delete %>
+      </p>
+    <% end %>
+    <p><%= markdown(note.contenu) %></p>
+  </div>
+<% end %>

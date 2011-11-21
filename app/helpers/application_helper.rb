@@ -2,7 +2,7 @@ module ApplicationHelper
 
   def markdown(text)
     return nil if text.nil?
-    text = bash_line_filter(text)
+#    text = bash_line_filter(text)
     text = hr_filter(text)
     text = coderay(text)
     textilize(text).html_safe

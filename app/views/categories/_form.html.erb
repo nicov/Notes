@@ -19,7 +19,7 @@
 <div class="field">
     <%= f.label :categorie_id %><br />
     <select id="categorie_categorie_id" name="categorie[categorie_id]">
-      <%= options_for_select(Categorie.select_map) %>
+      <%= options_for_select(Categorie.select_map, @categorie.categorie_id) %>
     </select>
   </div>
 

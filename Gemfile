@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~> 3.0'
+gem 'rails', '~> 3.1.3'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -12,6 +12,29 @@ gem 'thin'
 gem 'RedCloth'
 gem 'coderay'
 
+# Gems used only for assets and not required  
+# in production environments by default.  
+group :assets do  
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  gem 'uglifier'  
+end  
+  
+gem 'jquery-rails'
+gem 'execjs'
+gem 'therubyracer'
+
+group :test  do
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'spork'
+end
+
+group :cucumber do
+  gem 'cucumber-rails'
+end
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
@@ -20,7 +43,7 @@ gem 'coderay'
 
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
 # gem 'ruby-debug'
-# gem 'ruby-debug19', :require => 'ruby-debug'
+gem 'ruby-debug19', :require => 'ruby-debug'
 
 # Bundle the extra gems:
 # gem 'bj'

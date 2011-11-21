@@ -11,6 +11,29 @@
    Syntax recommendation http://www.w3.org/TR/REC-CSS2/
 */
 
+/* Layout */
+
+#categories_navigation {
+  float: left;
+  width: 300px;
+}
+
+#main_page {
+  float: left;
+  left: 300px;
+  width: 600px;
+}
+
+#right_side {
+  float: left;
+  left: 600px;
+  width: 200px;
+  height: 500px;
+/*  border: solid black 1px;*/
+}
+
+/* Autre */
+
 body {
   font-family: Verdana,Helvetica,Arial;
   font-size: 14px;
@@ -27,16 +50,7 @@ h2 {
   font-weight: normal;
 }
 
-#categories_navigation {
-    float: left;
-    width: 300px;
-}
 
-#main_page {
-    float: left;
-    left: 300px;
-    width: 600px;
-}
 
 hr {
   background-color: #D8D8D8;
@@ -57,6 +71,18 @@ hr.section {
   font-size: 16px;
 }
 
+.note h2 {
+  margin-bottom: 0px;
+}
+
+.note hr {
+  margin-top: 0px;
+}
+
 #preview {
   padding-bottom: 20px;
+}
+
+.actions{
+  float:right;
 }

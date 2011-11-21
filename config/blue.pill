@@ -1,0 +1,10 @@
+require 'rubygems'
+require 'bluepill'
+
+Bluepill.application("notes") do |app|
+  app.process("webapp") do |process|
+    process.working_dir = "tmp/bluepill"
+    process.start_command = "thin start -C config/thin.yml"
+    process.pid_file = "tmp/pids/bluepill.pid"
+  end
+end

@@ -46,7 +46,7 @@ class NotesController < ApplicationController
 
     respond_to do |format|
       if @note.save
-        format.html { redirect_to(@note.categorie, :notice => 'La note a été correctement enregistrée') }
+        format.html { redirect_to(edit_note_path(@note), :notice => 'La note a été correctement enregistrée') }
         format.xml  { render :xml => @note, :status => :created, :location => @note }
       else
         format.html { render :action => "new" }

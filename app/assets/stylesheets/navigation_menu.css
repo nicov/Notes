@@ -1,0 +1,12 @@
+ul.nav {
+  position:relative;
+  left:-25px;
+}
+
+li.branch {
+  list-style-type:disc;
+}
+
+li.leave {
+  list-style-type:circle;
+}

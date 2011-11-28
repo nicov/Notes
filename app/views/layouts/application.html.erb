@@ -9,6 +9,15 @@
   <body>
 
     <div id="en-tete">
+    
+      <div id="search_area">
+        <%= form_tag(notes_path, :method => "get") do %>
+          <%= label_tag(:q, "Search for:") %>
+          <%= text_field_tag(:q) %>
+          <%= submit_tag("Search") %>
+        <% end %>
+      </div>
+      
       <div id="links_area">
         <%= link_to 'Accueil',  root_path %> |
         <%= link_to 'Exporter notes',  :controller => 'gestion', :action => 'exporter' %>
@@ -21,33 +30,38 @@
           <%= link_to('sign in', new_user_session_path) %>
         <% end %>
       </div>
-      
-      <div id="search_area">
-        <%= form_tag(notes_path, :method => "get") do %>
-          <%= label_tag(:q, "Search for:") %>
-          <%= text_field_tag(:q) %>
-          <%= submit_tag("Search") %>
-        <% end %>
-      </div>
-    </div>
 
-    <div id="categories_navigation">
-      <h1>Categories</h1>
-      <ul>
-        <% Categorie.main.each do |categorie| %>
-          <%= render :partial => "categories/navigation_menu", :locals => { :categorie => categorie } %>
-        <% end %>
-      </ul>
-      <%= link_to 'Nouvelle Categorie',  new_categorie_path if user_signed_in? %>
-    </div>
-
-    <div id="main_page">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <%= yield %>
     </div>
     
-    <div id="right_side">
+    <div id="content">
+
+      <div id="categories_navigation">
+        <h1>Categories</h1>
+        <ul>
+          <% Categorie.main.each do |categorie| %>
+            <%= render :partial => "categories/navigation_menu", :locals => { :categorie => categorie } %>
+          <% end %>
+        </ul>
+        <%= link_to 'Nouvelle Categorie',  new_categorie_path if user_signed_in? %>
+      </div>
+
+      <div id="main_page">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <%= yield %>
+      </div>
+      
+      <div id="right_side">
+        <%= yield :right %>
+        
+        <h1>Navigation</h1>
+  
+          <ul>
+            <% @notes.each do |note| %>
+              <li><%= link_to note.titre, "##{note.titre}" %></li>
+            <% end %>
+          </ul>
+      </div>
     
     </div>
 

@@ -14,30 +14,35 @@
 /* Layout */
 
 #links_area {
-  float: left;
 }
 
 #search_area {
-  text-align: right;
+  float:right;
+}
+
+#content{
+  position: relative;
+	width: 100%;
 }
 
 #categories_navigation {
-  float: left;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 300px;
 }
 
 #main_page {
-  float: left;
-  left: 300px;
-  width: 600px;
+  margin-left: 320px;
+	margin-right: 320px;
+	padding-top: 5px;
 }
 
 #right_side {
-  float: left;
-  left: 600px;
-  width: 200px;
-  height: 500px;
-/*  border: solid black 1px;*/
+  position: absolute;
+	top: 0;
+	right: 0;
+	width: 300px;
 }
 
 /* Autre */
@@ -50,6 +55,7 @@ body {
 h1 {
   font-size: 24px;
   font-weight: normal;
+  margin-bottom: 0px;
 }
 
 h2 {
@@ -58,9 +64,9 @@ h2 {
   font-weight: normal;
 }
 
-
-
 hr {
+  margin-top: 0px;
+  margin-bottom: 20px;
   background-color: #D8D8D8;
   border-width: 0px;
   height: 1px;
@@ -73,6 +79,9 @@ hr.section {
 }
 
 .note {
+  padding: 10px;
+  background-color: #F4F39E;
+  margin-bottom: 20px;
 }
 
 .note h1 {
@@ -80,6 +89,7 @@ hr.section {
 }
 
 .note h2 {
+  margin-top: 0px;
   margin-bottom: 0px;
 }
 
@@ -93,4 +103,5 @@ hr.section {
 
 .actions{
   float:right;
+  vertical-align: text-bottom;
 }

@@ -1,14 +1,11 @@
-<div class='note'>
+<div id="<%= note.titre %>" class='note'>
   
   <div class="actions">
     <%= link_to 'Modifier', edit_note_path(note) %> |
-    <%= link_to 'Supprimer', note, :confirm => 'Are you sure?', :method => :delete %> |
-    <%= link_to 'monter', :controller => 'notes', :action => 'monter', :id => note.id %> |
-    <%= link_to 'descendre', :controller => 'notes', :action => 'descendre', :id => note.id%>
+    <%= link_to 'Supprimer', note, :confirm => 'Are you sure?', :method => :delete %>
   </div>  
   
-  <h2><%= "#{note.rang} - #{note.titre}" %></h2>
-    
+  <h2><%= note.titre %></h2>
   <hr/>
       
   <p><%= markdown(note.contenu) %></p>

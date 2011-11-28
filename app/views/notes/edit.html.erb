@@ -1,5 +1,12 @@
 <h1>Editing note</h1>
+<hr/>
+
+<div style="position:relative;top:-42px" class="actions">
+  <%= link_to 'Back', @note.categorie %>
+</div>
+
+<%= render :partial => 'note', :locals => {:note => @note} %>
+
+<hr/>
 
 <%= render 'form' %>
-
-<%= link_to 'Retour', @note.categorie %>

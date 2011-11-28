@@ -10,18 +10,15 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :nom %><br />
-    <%= f.text_field :nom %>
-  </div>
-
-<div class="field">
-    <%= f.label :categorie_id %><br />
+  
+  <dt><%= f.label :nom %></dt>
+  <dd><%= f.text_field :nom %></dd>
+  <dt><%= f.label :categorie_id %></dt>
+  <dd>
     <select id="categorie_categorie_id" name="categorie[categorie_id]">
       <%= options_for_select(Categorie.select_map, @categorie.categorie_id) %>
     </select>
-  </div>
+  </dd>
 
   <div class="actions">
     <%= f.submit %>

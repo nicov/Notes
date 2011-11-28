@@ -10,7 +10,7 @@ module ControllerMacros
     before(:each) do
       @request.env["devise.mapping"] = Devise.mappings[:user]
       user = User.create(
-        :email => "nico@name.org",
+        :email => "user@name.org",
         :password => "password",
         :password_confirmation => "password"
       )

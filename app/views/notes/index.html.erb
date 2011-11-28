@@ -1,7 +1,7 @@
 <h1>Dernières Notes</h1>
 
 <% @notes.each do |note| %>
-  <h3>Categorie: <%= note.categorie.nom %></h3>
+  <h3>Categorie: <%= note.categorie.nom unless note.categorie.nil? %></h3>
   
   <%= render :partial => 'note', :locals => {:note => note} %>
 <% end %>

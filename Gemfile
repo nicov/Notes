@@ -27,6 +27,7 @@ gem 'therubyracer'
 group :test  do
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'launchy'
   gem 'database_cleaner'
   gem 'spork'
 end

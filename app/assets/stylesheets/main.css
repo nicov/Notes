@@ -13,6 +13,14 @@
 
 /* Layout */
 
+#links_area {
+  float: left;
+}
+
+#search_area {
+  text-align: right;
+}
+
 #categories_navigation {
   float: left;
   width: 300px;

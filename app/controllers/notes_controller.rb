@@ -4,7 +4,11 @@ class NotesController < ApplicationController
   # GET /notes
   # GET /notes.xml
   def index
-    @notes = Note.order("created_at DESC").limit(10)
+    if params[:q]
+      @notes = Note.where("titre LIKE ?", "%#{params[:q]}%").order("created_at DESC").limit(10)
+    else
+      @notes = Note.order("created_at DESC").limit(10)
+    end
 
     respond_to do |format|
       format.html # index.html.erb

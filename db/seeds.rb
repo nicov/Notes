@@ -5,3 +5,20 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+
+# Utilisateur
+User.create(
+  :username => "nico",
+  :password => "password"
+)
+
+# Notes
+Note.create(
+  :titre => "Note 1",
+  :contenu => "Ceci est une note"
+)
+
+Note.create(
+  :titre => "Memo 1",
+  :contenu => "Ceci est un memo"
+)

@@ -9,16 +9,26 @@
   <body>
 
     <div id="en-tete">
-      <%= link_to 'Accueil',  root_path %> |
-      <%= link_to 'Exporter notes',  :controller => 'gestion', :action => 'exporter' %>
-      <% if user_signed_in? %>
-        | <%= link_to 'Importer notes',  :controller => 'gestion', :action => 'importer' if user_signed_in? %>
-      <% end %>
-      | <% if user_signed_in? %>
-        <%= link_to('logout', destroy_user_session_path) %>
-      <% else %>
-        <%= link_to('sign in', new_user_session_path) %>
-      <% end %>
+      <div id="links_area">
+        <%= link_to 'Accueil',  root_path %> |
+        <%= link_to 'Exporter notes',  :controller => 'gestion', :action => 'exporter' %>
+        <% if user_signed_in? %>
+          | <%= link_to 'Importer notes',  :controller => 'gestion', :action => 'importer' if user_signed_in? %>
+        <% end %>
+        | <% if user_signed_in? %>
+          <%= link_to('logout', destroy_user_session_path) %>
+        <% else %>
+          <%= link_to('sign in', new_user_session_path) %>
+        <% end %>
+      </div>
+      
+      <div id="search_area">
+        <%= form_tag(notes_path, :method => "get") do %>
+          <%= label_tag(:q, "Search for:") %>
+          <%= text_field_tag(:q) %>
+          <%= submit_tag("Search") %>
+        <% end %>
+      </div>
     </div>
 
     <div id="categories_navigation">

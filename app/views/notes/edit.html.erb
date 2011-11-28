@@ -1,9 +1,9 @@
-<h1>Editing note</h1>
-<hr/>
-
-<div style="position:relative;top:-42px" class="actions">
+<div style="position:relative;top:10px" class="actions">
   <%= link_to 'Back', @note.categorie %>
 </div>
+
+<h1>Editing note</h1>
+<hr/>
 
 <%= render :partial => 'note', :locals => {:note => @note} %>
 

@@ -16,11 +16,5 @@
 <% end %>
 
 <% content_for :right do %>
-  <h1>Navigation</h1>
-  
-  <ul>
-    <% @notes.each do |note| %>
-      <li><%= link_to note.titre, "##{note.titre}" %></li>
-    <% end %>
-  </ul>
+  <%= render :partial => 'bookmarks' %>
 <% end %>

@@ -52,15 +52,7 @@
       </div>
       
       <div id="right_side">
-        <%= yield :right %>
-        
-        <h1>Navigation</h1>
-  
-          <ul>
-            <% @notes.each do |note| %>
-              <li><%= link_to note.titre, "##{note.titre}" %></li>
-            <% end %>
-          </ul>
+        <%= yield :right %>          
       </div>
     
     </div>

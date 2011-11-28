@@ -1,0 +1,9 @@
+<h1>Bookmarks</h1>
+        
+<% unless @notes.nil? %>
+<ul>
+  <% @notes.each do |note| %>
+    <li><%= link_to note.titre, "##{note.titre}" %></li>
+  <% end %>
+</ul>
+<% end %>

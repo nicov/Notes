@@ -1,8 +1,8 @@
 class Categorie < ActiveRecord::Base
 
-  has_many :categories, :dependent => :destroy
+  has_many :categories
   belongs_to :categorie
-  has_many :notes, :dependent => :destroy
+  has_many :notes
 
   # Methodes
 

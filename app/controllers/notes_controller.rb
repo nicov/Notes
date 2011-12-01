@@ -79,10 +79,11 @@ class NotesController < ApplicationController
   # DELETE /notes/1.xml
   def destroy
     @note = Note.find(params[:id])
+    categorie = @note.categorie
     @note.destroy
 
     respond_to do |format|
-      format.html { redirect_to(notes_url) }
+      format.html { redirect_to(categorie.nil? ? notes_url : categorie) }
       format.xml  { head :ok }
     end
   end

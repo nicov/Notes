@@ -13,3 +13,7 @@ end
 Then /^I should not see "([^"]*)"$/ do |string|
   page.has_content?(string).should be_false
 end
+
+When /^I follow "([^"]*)"$/ do |link|
+  click_link(link)
+end

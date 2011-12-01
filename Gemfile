@@ -30,7 +30,7 @@ group :test  do
   gem 'capybara'
   gem 'launchy'
   gem 'database_cleaner'
-  gem 'spork'
+  gem 'spork', '0.9.0.rc9'
 end
 
 group :cucumber do

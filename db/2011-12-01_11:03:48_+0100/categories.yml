@@ -1,0 +1,20 @@
+
+---
+categories:
+  columns:
+  - id
+  - nom
+  - categorie_id
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - Linux
+    - !!null 
+    - '2011-11-28 14:36:56.666306'
+    - '2011-11-28 14:36:56.666306'
+  - - 2
+    - Organisation du système
+    - 1
+    - '2011-12-01 08:21:36.349164'
+    - '2011-12-01 08:21:36.349164'

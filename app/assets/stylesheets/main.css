@@ -13,6 +13,10 @@
 
 /* Layout */
 
+#en-tete {
+  padding: 20px 0;
+}
+
 #links_area {
 }
 
@@ -30,12 +34,14 @@
   top: 0;
   left: 0;
   width: 300px;
+/*  background-color: red;*/
 }
 
 #main_page {
   margin-left: 320px;
 	margin-right: 320px;
-	padding-top: 5px;
+	padding-top: 1px;
+/*	background-color: grey;*/
 }
 
 #right_side {
@@ -56,6 +62,7 @@ h1 {
   font-size: 24px;
   font-weight: normal;
   margin-bottom: 0px;
+/*  background-color: blue;*/
 }
 
 h2 {
@@ -102,6 +109,6 @@ hr.section {
 }
 
 .actions{
-  float:right;
+/*  float:right;*/
   vertical-align: text-bottom;
 }

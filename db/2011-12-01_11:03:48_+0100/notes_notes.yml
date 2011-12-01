@@ -1,0 +1,11 @@
+
+---
+notes_notes:
+  columns:
+  - id
+  - parent_id
+  - child_id
+  records: 
+  - - 1
+    - 2
+    - 3

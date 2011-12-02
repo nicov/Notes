@@ -16,7 +16,9 @@ class CategoriesController < ApplicationController
   # GET /categories/1.xml
   def show
     @categorie = Categorie.find(params[:id])
-    @notes = @categorie.notes.order('rang ASC')
+    @notes = @categorie.notes.where("rang IS NOT NULL").order('rang ASC')
+    @notes_without_rang = @categorie.notes.where("rang IS NULL")
+    @notes = @notes + @notes_without_rang
 
     respond_to do |format|
       format.html # show.html.erb

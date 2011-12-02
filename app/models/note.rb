@@ -2,6 +2,7 @@ class Note < ActiveRecord::Base
 
   # Associations
   belongs_to :categorie
+  has_and_belongs_to_many :new_categories
 
   # Validations
   validates_presence_of :titre, :contenu

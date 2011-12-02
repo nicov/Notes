@@ -7,57 +7,22 @@
     <%= csrf_meta_tag %>
   </head>
   <body>
-
-    <div id="en-tete">
-    
-      <div id="search_area">
-        <%= form_tag(notes_path, :method => "get") do %>
-          <%= label_tag(:q, "Search for:") %>
-          <%= text_field_tag(:q) %>
-          <%= submit_tag("Search") %>
-        <% end %>
-      </div>
-      
-      <div id="links_area">
-        <%= link_to 'Accueil',  root_path %> |
-        <%= link_to 'Exporter notes',  :controller => 'gestion', :action => 'exporter' %>
-        <% if user_signed_in? %>
-          | <%= link_to 'Importer notes',  :controller => 'gestion', :action => 'importer' if user_signed_in? %>
-        <% end %>
-        | <% if user_signed_in? %>
-          <%= link_to('logout', destroy_user_session_path) %>
-        <% else %>
-          <%= link_to('sign in', new_user_session_path) %>
-        <% end %>
-      </div>
-
+    <div id="head">
+      <%= render :partial => 'heading' %>
     </div>
     
+    <div id="navigation">
+      <%= render :partial => 'categories/navigation_tree' %>
+    </div>
+    
+    <div id="toc">
+      <%= yield :right %>          
+    </div>
+
     <div id="content">
-
-      <div id="categories_navigation">
-        <h1>Categories</h1>
-        <hr/>
-        
-        <ul>
-          <% Categorie.main.each do |categorie| %>
-            <%= render :partial => "categories/navigation_menu", :locals => { :categorie => categorie } %>
-          <% end %>
-        </ul>
-        <%= link_to 'Nouvelle Categorie',  new_categorie_path %>
-      </div>
-
-      <div id="main_page">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-        <%= yield %>
-      </div>
-      
-      <div id="right_side">
-        <%= yield :right %>          
-      </div>
-    
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
     </div>
-
   </body>
 </html>

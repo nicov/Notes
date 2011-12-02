@@ -1,21 +1,18 @@
-<h1>
-  <%= @categorie.nom %>
-  <hr/>
+<h1><%= @categorie.nom %></h1>
+<hr/>
 
-  <div class="actions">
-    <%= link_to 'Nouvelle Note',  new_note_path(:note => {:categorie_id => @categorie.id}) %> |
-    <%= link_to 'Modifier Catégorie', edit_categorie_path(@categorie) %>
-    <% if @notes.empty? %>
-      | <%= link_to 'Supprimer Catégorie', @categorie, :confirm => 'Etes-vous sur ?', :method => :delete %>
-    <% end %>
-  </div>
-
-</h1>
+<div class="title_links">
+  <%= link_to 'Nouvelle Note',  new_note_path(:note => {:categorie_id => @categorie.id}) %> |
+  <%= link_to 'Modifier Catégorie', edit_categorie_path(@categorie) %>
+  <% if @notes.empty? %>
+    | <%= link_to 'Supprimer Catégorie', @categorie, :confirm => 'Etes-vous sur ?', :method => :delete %>
+  <% end %>
+</div>
 
 <% @notes.each do |note| %>
   <%= render :partial => 'notes/note', :locals => {:note => note} %>
 <% end %>
 
 <% content_for :right do %>
-  <%= render :partial => 'bookmarks' %>
+  <%= render :partial => 'toc' %>
 <% end %>

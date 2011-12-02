@@ -3,6 +3,10 @@ class Categorie < ActiveRecord::Base
   has_many :categories
   belongs_to :categorie
   has_many :notes
+  has_and_belongs_to_many :new_notes,
+    :class_name => "Note",
+    :join_table => :categories_notes
+#    :foreign_key => "note_id"
 
   # Methodes
 

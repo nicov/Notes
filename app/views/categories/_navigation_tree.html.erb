@@ -1,9 +1,5 @@
-<h1>Categories</h1>
-<hr/>
-
 <ul>
   <% Categorie.main.each do |categorie| %>
     <%= render :partial => "categories/navigation_menu", :locals => { :categorie => categorie } %>
   <% end %>
 </ul>
-<%= link_to 'Nouvelle Categorie',  new_categorie_path %>

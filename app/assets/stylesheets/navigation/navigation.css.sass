@@ -1,0 +1,27 @@
+#navigation-content
+
+  // Style de l'arbre déroulant
+  ul
+    padding-left: 0px
+    margin-top: 0px
+    li
+      list-style:
+        image: none
+        type: none
+      padding:
+        left: 18px
+      position: relative
+      background:
+        repeat: no-repeat
+    li.folder.collapsed
+      background-image: url("/assets/right_arrow.png")
+      ul
+        display: none
+    li.folder.expanded
+      background-image: url("/assets/down_arrow.png")
+        
+  .folder-toggle
+    position: absolute
+    left: -3px
+    height: 16px
+    width: 20px

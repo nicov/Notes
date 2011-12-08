@@ -1,8 +1,9 @@
-<% ss_cat = (categorie.categories.empty? ? false : true) %>
-<li class="<%= ss_cat ? 'branch' : 'leave' %>">
+<% ss_cat = (categorie.categories.empty? ? false : true) if false %>
+<li class="folder expanded">
+  <div class="folder-toggle"></div>
   <%= link_to "#{categorie.nom} (#{categorie.notes.count})", categorie %>
   <% unless categorie.categories.empty? %>
-    <ul class="subMenu">
+    <ul>
       <% categorie.categories.order('nom ASC').each do |c| %>
         <%= render :partial => "categories/navigation_menu", :locals => { :categorie => c } %>
       <% end %>

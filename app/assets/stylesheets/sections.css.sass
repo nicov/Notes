@@ -1,26 +1,52 @@
 // Positionnement des différentes sections de la page
 
-//.full_height
-//  display: block
-//  position: absolute
-//  height: auto
-//  bottom: 0
-//  top: 0
-//  left: 0
-//  right: 0
+html
+  height: 100%
+  
+body
+  margin: 0
+  height: 100%
 
 #head
-  overflow: auto
+  overflow: hidden
+  height: 76px
+  
+#body
+  position: absolute
+  top: 76px
+  bottom: 0px
+  left: 0
+  right: 0
+  padding-left: 10px
+  padding-right: 10px
+  padding-top: 10px
 
 #toc
-  width: 300px
   float: right
   margin-left: 10px
+  width: 300px
 
 #content
   margin-left: 310px
   margin-right: 310px
+  height: 100%
+  overflow: auto
+  position: relative // Pour "étirer" le div interne en absolute
 
 #navigation
+  position: relative // Pour "étirer" le div interne en absolute
   float: left
   width: 300px
+  height: 100%
+  
+.stretcher // classe permettant d'"étirer" un calque interne
+  position: relative
+  height: 100%
+  
+.stretched // classe étirant un calque
+  position: absolute
+  bottom: 0
+  top: 0
+  left: 0
+  right: 0
+  

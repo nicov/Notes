@@ -11,18 +11,20 @@
       <%= render :partial => 'heading' %>
     </div>
     
-    <div id="navigation">
-      <%= render :partial => 'categories/navigation_tree' %>
-    </div>
-    
-    <div id="toc">
-      <%= yield :right %>          
-    </div>
+    <div id="body">
+      <!--p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p-->
+      <div id="navigation">
+        <%= render :partial => 'navigation' %>
+      </div>
+      
+      <div id="toc">
+        <%= yield :right %>          
+      </div>
 
-    <div id="content">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <%= yield %>
+      <div id="content">
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>

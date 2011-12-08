@@ -1,0 +1,11 @@
+<div id="navigation-header" class="column-header">
+  <h1>Categories</h1>
+  <hr/>
+  
+  <div class="title_links">
+    <%= link_to 'Nouvelle Categorie',  new_categorie_path %>
+  </div>
+</div>
+<div id="navigation-content" class="column-content">
+  <%= render :partial => 'categories/navigation_tree' %>
+</div>

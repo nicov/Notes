@@ -1,12 +1,16 @@
-<h1>Dernières Notes</h1>
-<hr/>
+<div id="content-header" class="column-header">
+  <h1>Dernières Notes</h1>
+  <hr/>
+</div>
 
-<% @notes.each do |note| %>
-  <h3>Categorie: <%= note.categorie.nom unless note.categorie.nil? %></h3>
-  
-  <%= render :partial => 'note', :locals => {:note => note} %>
-<% end %>
+<div id="content-content" class="column-content">
+  <% @notes.each do |note| %>
+    <h3>Categorie: <%= note.categorie.nom unless note.categorie.nil? %></h3>
+    
+    <%= render :partial => 'note', :locals => {:note => note} %>
+  <% end %>
 
-<% content_for :right do %>
-  <%= render :partial => 'categories/toc' %>
-<% end %>
+  <% content_for :right do %>
+    <%= render :partial => 'categories/toc' %>
+  <% end %>
+</div>

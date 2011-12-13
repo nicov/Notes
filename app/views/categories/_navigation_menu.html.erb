@@ -1,6 +1,9 @@
-<% ss_cat = (categorie.categories.empty? ? false : true) if false %>
+<% if categorie.categories.empty? %>
+<li>
+<% else %>
 <li class="folder expanded">
   <div class="folder-toggle"></div>
+<% end %>
   <%= link_to "#{categorie.nom} (#{categorie.notes.count})", categorie %>
   <% unless categorie.categories.empty? %>
     <ul>

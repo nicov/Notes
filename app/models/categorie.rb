@@ -27,7 +27,7 @@ class Categorie < ActiveRecord::Base
   def select_map(level = 0)
     retrait = "-"*level
     res = [["#{retrait} #{self.nom}", self.id]]
-    for c in self.categories
+    for c in self.categories.order("nom ASC")
       res.concat(c.select_map(level+1))
     end
     return res
@@ -35,7 +35,7 @@ class Categorie < ActiveRecord::Base
 
   def self.select_map(root = true)
     res = (root ? [["-", nil]] : [])
-    main_categories = Categorie.where(:categorie_id => nil)
+    main_categories = Categorie.where(:categorie_id => nil).order("nom ASC")
     for c in main_categories
       res.concat(c.select_map)
     end

@@ -27,3 +27,14 @@
   </div>
 
 <% end %>
+
+<% content_for :right do %>
+  <div class="column-header">
+    <h1>Textile reference</h1>
+    <hr/>
+  </div>
+  
+  <div class="column-content">
+    <%= render :partial => 'application/textile_reference' %>
+  </div>
+<% end %>

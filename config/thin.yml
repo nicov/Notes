@@ -1,5 +1,5 @@
 --- 
-chdir: /home/fsdz0585/www/notes
+chdir: /var/www/fsdz0585/notes
 environment: production
 timeout: 30
 log: log/thin.log

@@ -4,8 +4,8 @@ class NotesController < ApplicationController
   # GET /notes
   # GET /notes.xml
   def index
-    if params[:q]
-      @notes = Note.where("titre LIKE ?", "%#{params[:q]}%").order("created_at DESC").limit(10)
+    if params[:search]
+      @notes = Note.where("titre LIKE ?", "%#{params[:search]}%").order("created_at DESC").limit(10)
     else
       @notes = Note.order("created_at DESC").limit(10)
     end

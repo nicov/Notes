@@ -10,4 +10,4 @@ require: []
 
 wait: 30
 socket: tmp/sockets/thin.sock
-daemonize: true
+#daemonize: true

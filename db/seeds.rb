@@ -6,8 +6,12 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
-# Utilisateur
-#User.create(
-#  :username => "nico",
-#  :password => "password"
-#)
+if Rails.env = 'development'
+
+  # Utilisateur
+  User.create(
+    :username => "nico",
+    :password => "password"
+  )
+  
+  # Notes

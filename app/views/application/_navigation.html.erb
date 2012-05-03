@@ -8,4 +8,19 @@
 </div>
 <div id="navigation-content" class="column-content">
   <%= render :partial => 'categories/navigation_tree' %>
+  
+  <p>Hello, this is a jqtree test</p>
+  
+  <div id="navigation-tree"></div>
+  
+  <script type="text/javascript">
+    var data2 = <%=raw jqtree.to_json %>;
+    
+    $(function() {
+      $('#navigation-tree').tree({
+        data: data2,
+        saveState: 'navigation_tree'
+      });
+    });
+  </script>
 </div>

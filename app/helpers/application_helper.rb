@@ -1,5 +1,22 @@
 module ApplicationHelper
 
+  def jqtree
+    Categorie.main.collect {|c| jqbranch(c)}
+  end
+  
+  def jqbranch(categorie)
+    children = categorie.categories.collect{|c| jqbranch(c) }
+    {
+      :label    => categorie_label(categorie),
+      :id       => categorie.id,
+      :children => children
+    }
+  end
+  
+  def categorie_label(categorie)
+    link_to "#{categorie.nom} (#{categorie.notes.count})", categorie
+  end
+  
   def markdown(text)
     return nil if text.nil?
 #    text = bash_line_filter(text)

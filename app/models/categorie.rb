@@ -8,6 +8,8 @@ class Categorie < ActiveRecord::Base
     :join_table => :categories_notes
 #    :foreign_key => "note_id"
 
+  scope :main, where(:categorie_id => nil).order('nom ASC')
+
   # Methodes
 
   def path
@@ -20,9 +22,9 @@ class Categorie < ActiveRecord::Base
     return res
   end
 
-  def self.main
-    self.where(:categorie_id => nil).order('nom ASC')
-  end
+#  def self.main
+#    self.where(:categorie_id => nil).order('nom ASC')
+#  end
 
   def select_map(level = 0)
     retrait = "-"*level

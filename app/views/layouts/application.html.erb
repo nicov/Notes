@@ -11,20 +11,19 @@
       <%= render :partial => 'heading' %>
     </div>
     
-    <div id="body">
-      <!--p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p-->
-      <div id="navigation">
-        <%= render :partial => 'navigation' %>
-      </div>
-      
-      <div id="toc">
-        <%= yield :right %>
-      </div>
-
-      <div id="content">
-        <%= yield %>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <%= render :partial => 'navigation' %>
+        </div>
+        <div class="span6">
+          <%= yield %>
+        </div>
+        <div class="span3">
+          <%= yield :right %>
+        </div>
       </div>
     </div>
+    
   </body>
 </html>

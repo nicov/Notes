@@ -1,26 +1,21 @@
-<div id="navigation-header" class="column-header">
-  <h1>Categories</h1>
-  <hr/>
-  
-  <div class="title_links">
-    <%= link_to 'Nouvelle Categorie',  new_categorie_path %>
-  </div>
+<h1>Categories</h1>
+<hr class="links"/>
+
+<div class="subnav">
+  <ul class="nav nav-pills">
+    <li><%= link_to 'Nouvelle Categorie',  new_categorie_path %>
+  </ul>
 </div>
-<div id="navigation-content" class="column-content">
-  <%= render :partial => 'categories/navigation_tree' %>
+
+<div id="navigation-tree"></div>
+
+<script type="text/javascript">
+  var data2 = <%=raw jqtree.to_json %>;
   
-  <p>Hello, this is a jqtree test</p>
-  
-  <div id="navigation-tree"></div>
-  
-  <script type="text/javascript">
-    var data2 = <%=raw jqtree.to_json %>;
-    
-    $(function() {
-      $('#navigation-tree').tree({
-        data: data2,
-        saveState: 'navigation_tree'
-      });
+  $(function() {
+    $('#navigation-tree').tree({
+      data: data2,
+      saveState: 'navigation_tree'
     });
-  </script>
-</div>
+  });
+</script>

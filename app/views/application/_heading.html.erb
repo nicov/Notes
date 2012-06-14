@@ -1,29 +1,23 @@
-<div id="login_menu">
-  <ul class="head_bar">
-    <% if user_signed_in? %>
-      <li class="no_link"><%= current_user.username %> connected
-      <li><%= link_to('logout', destroy_user_session_path, :method => :delete) %>
-    <% else %>
-      <li><%= link_to('sign in', new_user_session_path) %>
-    <% end %>
-  </ul>
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to 'NotePad',  root_path, :class => 'brand' %>
+      <ul class="nav">
+        <li><%= link_to 'Exporter notes',  :controller => 'gestion', :action => 'exporter' %>
+      </ul>
+      <ul class="nav pull-right">
+        <%= form_tag(notes_path, :method => "get", :class => 'navbar-search') do %>
+          <%= text_field_tag(:search, nil, :class => 'search-query', :placeholder => 'Search') %>
+        <% end %>
+        <% if user_signed_in? %>
+          <li>
+            <a><%= current_user.username %> connected</a>
+          </li>
+          <li><%= link_to('logout', destroy_user_session_path, :method => :delete) %>
+        <% else %>
+          <li><%= link_to('sign in', new_user_session_path) %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </div>
-
-<div id="main_menu">
-  <ul class="head_bar">
-    <li><%= link_to 'Accueil',  root_path %>
-    <li><%= link_to 'Exporter notes',  :controller => 'gestion', :action => 'exporter' %>
-    <% if user_signed_in? %>
-      <li><%= link_to 'Importer notes',  :controller => 'gestion', :action => 'importer' %>
-    <% end %>
-  </ul>
-</div>
-
-<div id="search_area">
-  <%= form_tag(notes_path, :method => "get") do %>
-    <%= text_field_tag(:search) %>
-    <%= submit_tag("Search", :name => nil) %>
-  <% end %>
-</div>
-
-<hr/>
